@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>make.fun board — live bounties, pots and leaderboards</title>
+<meta name="description" content="A fast, read-only client for make.fun: live bounty pots, entry fees, deadlines, leaderboards and public profiles, straight from the public API.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%235140c4'/%3E%3Ccircle cx='8' cy='8' r='3.4' fill='%23fcfcfb'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#/">make.fun <span class="brand-sub">board</span></a>
+  <form id="lookup" class="lookup" autocomplete="off">
+    <label class="sr" for="lookup-input">Look up a profile by handle</label>
+    <input id="lookup-input" name="handle" type="text" placeholder="Profile handle, e.g. mangkarones" spellcheck="false">
+    <button type="submit">Open profile</button>
+  </form>
+  <div class="livebox">
+    <span class="live-dot" aria-hidden="true"></span>
+    <span id="live-label">Live data</span>
+    <button id="refresh" type="button">Refresh</button>
+  </div>
+</header>
+<main id="view" class="view" aria-live="off"></main>
+<footer class="foot">
+  <p id="netstats">No requests yet.</p>
+  <p>Every figure on this page comes from the public make.fun API at the moment it is read — pots, fees and counts are the live values, never a cached snapshot presented as current. Data: <a href="https://make.fun/api" rel="noopener">make.fun/api</a> · <a href="https://make.fun" rel="noopener">make.fun</a></p>
+</footer>
+<script type="module" src="main.js"></script>
+</body>
+</html>
